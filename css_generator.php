@@ -17,7 +17,9 @@ function scandir_option($dir_path, $my_scandir, &$array_img_path)
 function css_generator($argv)
 {
    
-    $my_scandir = true;
+    $dir_path = end($argv);
+	$my_scandir = true;
+	$array_img_path = [];
     
 
 }
