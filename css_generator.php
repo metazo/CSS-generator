@@ -14,6 +14,30 @@ function scandir_option($dir_path, $my_scandir, &$array_img_path)
     }
 }
 
+function sprite_name($argv, $key, $value, &$array_name)
+{
+	if ($value == '-i')
+	{
+		$array_name['sprite'] = $argv[$key + 1];
+	}
+	elseif (substr($value, 0, 15) == '--output-image=')
+	{
+		$array_name['sprite'] = substr($argv[$key], 15);
+	}
+}
+
+function css_name($argv, $key, $value, &$array_name)
+{
+	if ($value == '-s')
+	{
+		$array_name['css'] = $argv[$key + 1];
+	}
+	elseif (substr($value, 0, 15) == '--output-style=')
+	{
+		$array_name['css'] = substr($argv[$key], 15);
+	}
+}
+
 function css_generator($argv)
 {
    
